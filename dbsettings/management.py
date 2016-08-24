@@ -10,8 +10,8 @@ def mk_permissions(permissions, appname, verbosity):
     from django.contrib.auth.models import Permission
     from django.contrib.contenttypes.models import ContentType
     # create a content type for the app
-    ct, created = ContentType.objects.get_or_create(model='', app_label=appname,
-                                                    defaults={'name': appname})
+    ct, created = ContentType.objects.get_or_create(model='',
+                                                    app_label=appname)
     if created and verbosity >= 2:
         print("Adding custom content type '%s'" % ct)
     # create permissions
